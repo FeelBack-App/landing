@@ -1,0 +1,277 @@
+
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--font-sans);color:var(--color-text-primary);background:transparent}
+  :root{--blue-50:#E6F1FB;--blue-100:#B5D4F4;--blue-200:#85B7EB;--blue-400:#378ADD;--blue-600:#185FA5;--blue-800:#0C447C;--blue-900:#042C53}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2.5rem;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary)}
+  .logo{font-size:17px;font-weight:500;color:var(--blue-800);letter-spacing:-0.3px}
+  .logo span{color:var(--blue-400)}
+  .nav-links{display:flex;gap:2rem;list-style:none}
+  .nav-links a{font-size:14px;color:var(--color-text-secondary);text-decoration:none;transition:color 0.2s}
+  .nav-links a:hover{color:var(--blue-600)}
+  .cta-btn{background:var(--blue-600);color:#fff;border:none;border-radius:var(--border-radius-md);padding:9px 20px;font-size:14px;cursor:pointer;font-weight:500;transition:background 0.2s}
+  .cta-btn:hover{background:var(--blue-800)}
+  .cta-btn.outline{background:transparent;color:var(--blue-600);border:0.5px solid var(--blue-400)}
+  .cta-btn.outline:hover{background:var(--blue-50)}
+  section{padding:5rem 2.5rem}
+  .container{max-width:900px;margin:0 auto}
+  .tag{display:inline-block;font-size:12px;font-weight:500;color:var(--blue-800);background:var(--blue-50);border:0.5px solid var(--blue-100);border-radius:20px;padding:4px 14px;margin-bottom:1.25rem;letter-spacing:0.3px}
+  h1{font-size:42px;font-weight:500;line-height:1.2;color:var(--blue-900);max-width:700px;letter-spacing:-0.5px}
+  h1 em{font-style:normal;color:var(--blue-400)}
+  .hero-sub{font-size:17px;color:var(--color-text-secondary);max-width:560px;line-height:1.7;margin-top:1.25rem}
+  .hero-actions{display:flex;gap:12px;margin-top:2.5rem;flex-wrap:wrap}
+  .hero-divider{display:flex;align-items:center;gap:1rem;margin-top:4rem;padding-top:2rem;border-top:0.5px solid var(--color-border-tertiary)}
+  .hero-divider p{font-size:13px;color:var(--color-text-secondary)}
+  .pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:20px;padding:5px 14px;color:var(--color-text-secondary)}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--blue-400);display:inline-block}
+  h2{font-size:30px;font-weight:500;color:var(--blue-900);letter-spacing:-0.3px;line-height:1.3}
+  .section-label{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:1.5px;color:var(--blue-400);margin-bottom:0.75rem}
+  .section-intro{font-size:16px;color:var(--color-text-secondary);line-height:1.7;margin-top:1rem;max-width:620px}
+  .vision-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem}
+  .v-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.5rem}
+  .v-card .ico{width:36px;height:36px;border-radius:var(--border-radius-md);background:var(--blue-50);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+  .v-card h3{font-size:15px;font-weight:500;color:var(--blue-900);margin-bottom:0.5rem}
+  .v-card p{font-size:14px;color:var(--color-text-secondary);line-height:1.65}
+  .product-hero{background:var(--blue-50);border:0.5px solid var(--blue-100);border-radius:var(--border-radius-lg);padding:3rem;margin-top:3rem;text-align:center}
+  .product-hero p{font-size:16px;color:var(--blue-800);line-height:1.7;max-width:620px;margin:0 auto}
+  .product-hero strong{color:var(--blue-600);font-weight:500}
+  .feat-list{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+  .feat{display:flex;gap:12px;align-items:flex-start;padding:1.25rem;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg)}
+  .feat-ico{width:32px;height:32px;border-radius:var(--border-radius-md);background:var(--blue-50);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+  .feat h4{font-size:14px;font-weight:500;color:var(--blue-900);margin-bottom:4px}
+  .feat p{font-size:13px;color:var(--color-text-secondary);line-height:1.6}
+  .communs-section{background:var(--blue-900);border-radius:var(--border-radius-lg);padding:3.5rem;margin-top:0}
+  .communs-section .section-label{color:var(--blue-200)}
+  .communs-section h2{color:#fff}
+  .communs-section .section-intro{color:rgba(255,255,255,0.65)}
+  .communs-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-top:2.5rem}
+  .communs-card{background:rgba(255,255,255,0.06);border:0.5px solid rgba(255,255,255,0.12);border-radius:var(--border-radius-lg);padding:1.25rem}
+  .communs-card h4{font-size:14px;font-weight:500;color:#fff;margin-bottom:0.5rem}
+  .communs-card p{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6}
+  .join-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
+  .join-card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.75rem;background:var(--color-background-primary)}
+  .join-card h3{font-size:16px;font-weight:500;color:var(--blue-900);margin-bottom:0.75rem}
+  .join-card p{font-size:14px;color:var(--color-text-secondary);line-height:1.65;margin-bottom:1.25rem}
+  .join-tag{font-size:12px;color:var(--blue-800);background:var(--blue-50);border:0.5px solid var(--blue-100);border-radius:20px;padding:3px 10px;display:inline-block;margin-bottom:1rem}
+  .contact-form{max-width:540px;margin-top:2.5rem}
+  .contact-form input,.contact-form textarea{width:100%;margin-bottom:1rem;font-family:var(--font-sans)}
+  .contact-form textarea{height:120px;resize:vertical}
+  footer{border-top:0.5px solid var(--color-border-tertiary);padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:var(--color-background-primary)}
+  footer p{font-size:13px;color:var(--color-text-secondary)}
+  .footer-links{display:flex;gap:1.5rem}
+  .footer-links a{font-size:13px;color:var(--color-text-secondary);text-decoration:none}
+  .footer-links a:hover{color:var(--blue-600)}
+  .sep{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:0}
+  svg.ico-svg{width:18px;height:18px;stroke:var(--blue-400);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+</style>
+
+<nav>
+  <div class="logo">psych<span>ia</span></div>
+  <ul class="nav-links">
+    <li><a href="#vision">Vision</a></li>
+    <li><a href="#produit">Produit</a></li>
+    <li><a href="#communs">Communs</a></li>
+    <li><a href="#rejoindre">Rejoindre</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="cta-btn">Demander l'accès</button>
+</nav>
+
+<section id="accueil" style="padding-top:6rem;padding-bottom:6rem;background:linear-gradient(180deg,var(--blue-50) 0%,transparent 100%)">
+  <div class="container">
+    <div class="tag">Santé mentale · Recherche translationnelle</div>
+    <h1>Comprendre les troubles psychiques,<br><em>à la source</em></h1>
+    <p class="hero-sub">Nous distinguons les causes personnelles et environnementales des difficultés psychologiques — de l'individu jusqu'à l'organisation.</p>
+    <div class="hero-actions">
+      <button class="cta-btn">Découvrir le produit</button>
+      <button class="cta-btn outline">Rejoindre le projet</button>
+    </div>
+    <div class="hero-divider">
+      <span class="pill"><span class="dot"></span>Recherche clinique</span>
+      <span class="pill"><span class="dot"></span>Psychiatrie computationnelle</span>
+      <span class="pill"><span class="dot"></span>Machine learning</span>
+      <p>Recherche translationnelle & ingénierie</p>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<section id="vision">
+  <div class="container">
+    <p class="section-label">Vision</p>
+    <h2>Transformer la compréhension<br>de la santé mentale</h2>
+    <p class="section-intro">Dépasser la standardisation des comportements individuels par les contraintes environnementales, en quantifiant les causes intra-sujet et extra-sujet des troubles psychiques.</p>
+    <div class="vision-grid">
+      <div class="v-card">
+        <div class="ico">
+          <svg class="ico-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/><path d="M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </div>
+        <h3>Causes intra-sujet</h3>
+        <p>Identification et mesure des facteurs psychobiologiques propres à l'individu, intégrés dans une analyse longitudinale continue.</p>
+      </div>
+      <div class="v-card">
+        <div class="ico">
+          <svg class="ico-svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Causes extra-sujet</h3>
+        <p>Analyse des pressions environnementales, organisationnelles et sociales qui conditionnent la santé mentale des individus.</p>
+      </div>
+      <div class="v-card">
+        <div class="ico">
+          <svg class="ico-svg" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Recherche translationnelle</h3>
+        <p>Un pont entre la recherche fondamentale et la clinique, pour que les avancées scientifiques bénéficient directement aux patients.</p>
+      </div>
+      <div class="v-card">
+        <div class="ico">
+          <svg class="ico-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 17h7M17 14v7"/></svg>
+        </div>
+        <h3>Réduction des RPS</h3>
+        <p>Des indicateurs de santé mentale fiables pour éclairer les décisions stratégiques des organisations et améliorer les conditions de travail.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<section id="produit" style="background:var(--color-background-secondary)">
+  <div class="container">
+    <p class="section-label">Produit</p>
+    <h2>Une analyse complète du signal individuel</h2>
+    <p class="section-intro">L'état de l'art de la recherche en psychiatrie clinique, computationnelle et en machine learning — au service du suivi psychologique.</p>
+    <div class="product-hero">
+      <p>Une <strong>agrégation hautement sécurisée</strong> des données de santé individuelles, pour réaligner le bien-être de chaque personne avec le développement durable des organisations.</p>
+    </div>
+    <div class="feat-list">
+      <div class="feat">
+        <div class="feat-ico">
+          <svg class="ico-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h4>Données souveraines et sécurisées</h4>
+          <p>Architecture confidentielle, conformité maximale pour les données de santé sensibles.</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg class="ico-svg" viewBox="0 0 24 24"><path d="M2 20h20M6 20V10M12 20V4M18 20v-6"/></svg>
+        </div>
+        <div>
+          <h4>Signaux multi-dimensionnels</h4>
+          <p>Agrégation de l'ensemble des signaux émis par l'individu, traités par des modèles SOTA.</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg class="ico-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div>
+          <h4>Suivi longitudinal</h4>
+          <p>Monitoring continu permettant de détecter les évolutions et d'ajuster l'accompagnement.</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg class="ico-svg" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <div>
+          <h4>Tableaux de bord organisationnels</h4>
+          <p>Indicateurs agrégés et anonymisés pour les décideurs, orientés prévention des RPS.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<section id="communs" style="padding:5rem 2.5rem">
+  <div class="container">
+    <div class="communs-section">
+      <p class="section-label">Les communs</p>
+      <h2>Construire autrement</h2>
+      <p class="section-intro">Une organisation qui diffuse le risque pour diffuser la valeur — des outils et savoirs produits en commun, accessibles à tous.</p>
+      <div class="communs-grid">
+        <div class="communs-card">
+          <h4>Open science</h4>
+          <p>Les protocoles, modèles et résultats de recherche sont partagés librement avec la communauté scientifique.</p>
+        </div>
+        <div class="communs-card">
+          <h4>Gouvernance partagée</h4>
+          <p>Un modèle organisationnel distribué, où la prise de décision implique l'ensemble des contributeurs.</p>
+        </div>
+        <div class="communs-card">
+          <h4>Valeur distribuée</h4>
+          <p>La valeur créée est partagée entre tous ceux qui prennent le risque de construire — pas seulement les fondateurs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<section id="rejoindre">
+  <div class="container">
+    <p class="section-label">Rejoindre</p>
+    <h2>Contribuer au projet</h2>
+    <p class="section-intro">Nous accueillons des profils engagés — cliniciens, chercheurs, ingénieurs, professionnels du soin ou du service public — qui souhaitent agir sans renoncer à leurs valeurs.</p>
+    <div class="join-grid">
+      <div class="join-card">
+        <div class="join-tag">Clinique & Recherche</div>
+        <h3>Psychiatres, psychologues, chercheurs</h3>
+        <p>Contribuez à l'intégration du SOTA clinique dans un outil de suivi réel. Votre expertise est constitutive du produit.</p>
+        <button class="cta-btn outline" style="font-size:13px;padding:7px 16px">Postuler</button>
+      </div>
+      <div class="join-card">
+        <div class="join-tag">Ingénierie & Data</div>
+        <h3>Développeurs, data scientists, ML engineers</h3>
+        <p>Construisez une infrastructure de santé mentale ouverte, robuste et souveraine, en lien direct avec la recherche.</p>
+        <button class="cta-btn outline" style="font-size:13px;padding:7px 16px">Postuler</button>
+      </div>
+      <div class="join-card">
+        <div class="join-tag">Organisations & RH</div>
+        <h3>DRH, responsables QVT, managers</h3>
+        <p>Pilotez la santé mentale de vos équipes avec des indicateurs fiables, éthiques et actionnables.</p>
+        <button class="cta-btn outline" style="font-size:13px;padding:7px 16px">Nous contacter</button>
+      </div>
+      <div class="join-card" style="border:0.5px solid var(--blue-100);background:var(--blue-50)">
+        <div class="join-tag">Notre modèle</div>
+        <h3>Une intégration en deux temps</h3>
+        <p>Une phase d'immersion courte et transparente, puis une collaboration rémunérée avec plus de flexibilité et d'impact réel.</p>
+        <button class="cta-btn" style="font-size:13px;padding:7px 16px">En savoir plus</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<section id="contact" style="background:var(--color-background-secondary)">
+  <div class="container">
+    <p class="section-label">Contact</p>
+    <h2>Entrer en contact</h2>
+    <p class="section-intro">Une question, une proposition de collaboration, ou simplement l'envie d'en savoir plus — écrivez-nous.</p>
+    <div class="contact-form">
+      <input type="text" placeholder="Nom & prénom">
+      <input type="email" placeholder="Adresse e-mail">
+      <input type="text" placeholder="Organisation (optionnel)">
+      <textarea placeholder="Votre message…"></textarea>
+      <button class="cta-btn" style="width:100%;padding:12px">Envoyer le message</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Psychia — Tous droits réservés</p>
+  <div class="footer-links">
+    <a href="#vision">Vision</a>
+    <a href="#produit">Produit</a>
+    <a href="#communs">Communs</a>
+    <a href="#rejoindre">Rejoindre</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
