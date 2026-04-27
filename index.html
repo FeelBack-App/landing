@@ -1,6 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>psychia</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230C447C'/%3E%3Ccircle cx='16' cy='16' r='8' stroke='%23fff' stroke-width='1.8' fill='none'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23fff'/%3E%3Cpath d='M16 10c3.31 0 6 2.69 6 6' stroke='%23378ADD' stroke-width='1.8' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+</head>
+<body>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
-  :root{--b50:#E6F1FB;--b100:#B5D4F4;--b200:#85B7EB;--b400:#378ADD;--b600:#185FA5;--b800:#0C447C;--b900:#042C53}
+  :root{
+    --b50:#E6F1FB;--b100:#B5D4F4;--b200:#85B7EB;--b400:#378ADD;--b600:#185FA5;--b800:#0C447C;--b900:#042C53;
+    --color-background-primary:#ffffff;
+    --color-background-secondary:#f5f7fa;
+    --color-text-primary:#042C53;
+    --color-text-secondary:#5a6a80;
+    --color-border-tertiary:#e2e8f0;
+    --border-radius-md:8px;
+    --border-radius-lg:14px;
+    --font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  }
+  body{font-family:var(--font-sans);background:var(--color-background-primary);color:var(--color-text-primary)}
   nav{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 2.5rem;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);position:sticky;top:0;z-index:100}
   .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
   .logo-mark{width:34px;height:34px;border-radius:9px;background:var(--b800);display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -26,7 +46,7 @@
   .pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:20px;padding:5px 14px;color:var(--color-text-secondary)}
   .dot{width:7px;height:7px;border-radius:50%;background:var(--b400);display:inline-block;flex-shrink:0}
   .section-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1.8px;color:var(--b400);margin-bottom:0.75rem}
-  h2{font-size:34px;font-weight:500;color:var(--b900);letter-spacing:-0.5px;line-height:1.25}
+  h2{font-size:42px;font-weight:500;color:var(--b900);letter-spacing:-0.5px;line-height:1.25}
   .section-intro{font-size:16px;color:var(--color-text-secondary);line-height:1.7;margin-top:1rem;max-width:620px}
   .vision-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem}
   .v-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.5rem}
@@ -103,7 +123,7 @@
     <li><a href="#rejoindre">Rejoindre</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="cta-btn">Demander l'accès</button>
+  <a href="https://drive.google.com/drive/folders/1YDlfqSPVTVewPGZG9AequrQ0gIMIS3y9?usp=drive_link" target="_blank" class="cta-btn">Demander l'accès au drive</a>
 </nav>
 
 <section id="accueil" style="padding-top:6rem;padding-bottom:6rem;background:linear-gradient(180deg,var(--b50) 0%,transparent 100%)">
@@ -111,10 +131,10 @@
     <div class="tag">Santé mentale · Recherche translationnelle</div>
     <h1>Comprendre les troubles psychiques,<br><em>à la source</em></h1>
     <p class="hero-sub">Nous distinguons les causes personnelles et environnementales des difficultés psychologiques — de l'individu jusqu'à l'organisation.</p>
-    <div class="hero-actions">
+    <!-- <div class="hero-actions">
       <button class="cta-btn">Découvrir le produit</button>
       <button class="cta-btn outline">Rejoindre le projet</button>
-    </div>
+    </div> -->
     <div class="hero-divider">
       <span class="pill"><span class="dot"></span>Recherche clinique</span>
       <span class="pill"><span class="dot"></span>Psychiatrie computationnelle</span>
@@ -353,4 +373,5 @@ drop.addEventListener('drop', e => {
   drop.style.background='var(--b50)';
   if (e.dataTransfer.files.length) { showLoading(); setTimeout(() => renderResult(mockScores()), 1800); }
 });
-</script>
+</script></body>
+</html>
