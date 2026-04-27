@@ -1,2 +1,1 @@
-# .github.io
-landing page
+Landing page at feelback-app.github.io/landing/
