@@ -118,6 +118,7 @@
     .score-label{min-width:110px;font-size:12px}
     .global-score{flex-direction:column;align-items:flex-start;gap:0.5rem}
     .big-pct{font-size:28px}
+    .vision-grid[style*="1fr 1fr 1fr"]{grid-template-columns:1fr !important}
   }
 </style>
 
@@ -127,7 +128,7 @@
   <div class="container">
     <p class="section-label">Vision</p>
     <h1>Comprendre les troubles psychiques,<br><em>à la source</em></h1>
-    <p class="hero-sub" style="margin-top:1.25rem;max-width:620px">Dépasser la standardisation des comportements individuels par les contraintes environnementales — en quantifiant ce qui vient du patient et ce qui vient de son contexte.</p>
+    <p class="hero-sub" style="margin-top:1.25rem;max-width:620px">Nous distinguons les causes personnelles et environnementales des difficultés psychologiques — de l'individu jusqu'à l'organisation.</p>
     <div class="vision-grid" style="margin-top:3rem">
       <div class="v-card">
         <div class="ico"><svg class="ico-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></div>
@@ -140,8 +141,26 @@
         <p>Analyse des pressions environnementales, organisationnelles et sociales qui conditionnent la santé mentale des individus.</p>
       </div>
     </div>
-    <p class="section-label" style="margin-top:3.5rem">Nos valeurs</p>
-    <div class="vision-grid" style="margin-top:1rem">
+    <p class="section-intro" style="margin-top:3rem;margin-bottom:1rem">Une approche ancrée dans trois disciplines complémentaires, appliquées ensemble au signal de santé mentale.</p>
+    <div class="vision-grid" style="grid-template-columns:1fr 1fr 1fr">
+      <div class="v-card">
+        <div class="ico"><svg class="ico-svg" viewBox="0 0 24 24"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2zM4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <h3>Recherche clinique</h3>
+        <p>Des protocoles co-construits avec des praticiens, validés dans des contextes réels de soin.</p>
+      </div>
+      <div class="v-card">
+        <div class="ico"><svg class="ico-svg" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>Psychiatrie computationnelle</h3>
+        <p>Modélisation mathématique des processus cognitifs et affectifs pour dépasser les échelles subjectives.</p>
+      </div>
+      <div class="v-card">
+        <div class="ico"><svg class="ico-svg" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>Machine learning</h3>
+        <p>Des modèles entraînés sur des signaux individuels longitudinaux pour détecter des patterns invisibles à l'œil nu.</p>
+      </div>
+    </div>
+    <p class="section-intro" style="margin-top:3rem;margin-bottom:1rem">Un projet fondé sur des principes organisationnels clairs, où décision et valeur sont partagées avec ceux qui construisent.</p>
+    <div class="vision-grid">
       <div class="v-card">
         <div class="ico"><svg class="ico-svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>Gouvernance partagée</h3>
@@ -152,12 +171,6 @@
         <h3>Valeur distribuée</h3>
         <p>La valeur créée est partagée entre tous ceux qui prennent le risque de construire — pas seulement les fondateurs.</p>
       </div>
-    </div>
-    <div class="hero-divider" style="margin-top:3rem;padding-top:2rem">
-      <p style="font-size:12px;color:var(--color-text-secondary);letter-spacing:0.5px">Ancrage disciplinaire</p>
-      <span class="pill"><span class="dot"></span>Recherche clinique</span>
-      <span class="pill"><span class="dot"></span>Psychiatrie computationnelle</span>
-      <span class="pill"><span class="dot"></span>Machine learning</span>
     </div>
   </div>
 </section>
