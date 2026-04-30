@@ -110,64 +110,25 @@
 
   /* ── Responsive ── */
   @media(max-width:768px){
-    nav{padding:1rem 1.25rem;gap:0.75rem}
-    .nav-links{display:none}
-    section{padding:3rem 1.25rem}
-    .container{padding:0}
-    h1{font-size:30px;letter-spacing:-0.4px}
-    h2{font-size:28px}
-    .hero-sub{font-size:15px}
-    .hero-actions{flex-direction:column;align-items:flex-start}
-    .cta-btn{width:100%;text-align:center}
-    .vision-grid{grid-template-columns:1fr}
-    .feat-list{grid-template-columns:1fr}
     .communs-grid{grid-template-columns:1fr}
     .communs-section{padding:2rem 1.25rem}
     .join-grid{grid-template-columns:1fr}
     .drive-banner{flex-direction:column;align-items:flex-start}
-    .drive-banner .cta-btn{width:100%;text-align:center}
     .product-hero{padding:1.75rem 1.25rem}
-    .score-label{min-width:120px;font-size:12px}
-    footer{flex-direction:column;align-items:flex-start;padding:1.5rem 1.25rem}
-    .footer-links{flex-wrap:wrap;gap:1rem}
+    .score-label{min-width:110px;font-size:12px}
     .global-score{flex-direction:column;align-items:flex-start;gap:0.5rem}
     .big-pct{font-size:28px}
-  }
-
-  @media(max-width:480px){
-    h1{font-size:26px}
-    h2{font-size:24px}
-    .communs-section{border-radius:0}
-    .hero-divider{flex-direction:column;align-items:flex-start}
   }
 </style>
 
 <script src="nav.js"></script>
 
-<section id="accueil" style="padding-top:6rem;padding-bottom:6rem;background:linear-gradient(180deg,var(--b50) 0%,transparent 100%)">
-  <div class="container">
-    <h1>Comprendre les troubles psychiques,<br><em>à la source</em></h1>
-    <p class="hero-sub">Nous distinguons les causes personnelles et environnementales des difficultés psychologiques — de l'individu jusqu'à l'organisation.</p>
-    <!-- <div class="hero-actions">
-      <button class="cta-btn">Découvrir le produit</button>
-      <button class="cta-btn outline">Rejoindre le projet</button>
-    </div> -->
-    <div class="hero-divider">
-      <span class="pill"><span class="dot"></span>Recherche clinique</span>
-      <span class="pill"><span class="dot"></span>Psychiatrie computationnelle</span>
-      <span class="pill"><span class="dot"></span>Machine learning</span>
-    </div>
-  </div>
-</section>
-
-<hr class="sep">
-
-<section id="vision">
+<section id="vision" style="padding-top:6rem;padding-bottom:5rem;background:linear-gradient(180deg,var(--b50) 0%,transparent 100%)">
   <div class="container">
     <p class="section-label">Vision</p>
-    <h2>Transformer la compréhension<br>de la santé mentale</h2>
-    <p class="section-intro">Dépasser la standardisation des comportements individuels par les contraintes environnementales, en quantifiant les causes intra-sujet et extra-sujet des troubles psychiques.</p>
-    <div class="vision-grid">
+    <h1>Comprendre les troubles psychiques,<br><em>à la source</em></h1>
+    <p class="hero-sub" style="margin-top:1.25rem;max-width:620px">Dépasser la standardisation des comportements individuels par les contraintes environnementales — en quantifiant ce qui vient du patient et ce qui vient de son contexte.</p>
+    <div class="vision-grid" style="margin-top:3rem">
       <div class="v-card">
         <div class="ico"><svg class="ico-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></div>
         <h3>Causes intra-sujet</h3>
@@ -191,6 +152,12 @@
         <h3>Valeur distribuée</h3>
         <p>La valeur créée est partagée entre tous ceux qui prennent le risque de construire — pas seulement les fondateurs.</p>
       </div>
+    </div>
+    <div class="hero-divider" style="margin-top:3rem;padding-top:2rem">
+      <p style="font-size:12px;color:var(--color-text-secondary);letter-spacing:0.5px">Ancrage disciplinaire</p>
+      <span class="pill"><span class="dot"></span>Recherche clinique</span>
+      <span class="pill"><span class="dot"></span>Psychiatrie computationnelle</span>
+      <span class="pill"><span class="dot"></span>Machine learning</span>
     </div>
   </div>
 </section>
@@ -254,7 +221,10 @@
     <p class="section-label">Rejoindre</p>
     <h2>Contribuer au projet</h2>
     <p class="section-intro" style="margin:1rem auto 2rem">Cliniciens, chercheurs, ingénieurs, professionnels RH — découvrez comment intégrer le projet, notre modèle de rémunération et testez votre adéquation.</p>
-    <a href="rejoindre.html" class="cta-btn" style="padding:13px 32px;font-size:15px">Voir la page Rejoindre →</a>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="rejoindre.html" class="cta-btn" style="padding:13px 32px;font-size:15px">Collaborateur →</a>
+      <a href="partenaire.html" class="cta-btn outline" style="padding:13px 32px;font-size:15px">Partenaire →</a>
+    </div>
   </div>
 </section>
 
@@ -267,70 +237,5 @@
     <a href="#rejoindre">Rejoindre</a>
   </div>
 </footer>
-
-<script>
-const skills = [
-  {label:"Psychiatrie clinique", w:0.25},
-  {label:"Machine learning / IA", w:0.22},
-  {label:"Psychiatrie computationnelle", w:0.18},
-  {label:"Ingénierie logicielle", w:0.15},
-  {label:"Recherche translationnelle", w:0.12},
-  {label:"Santé publique & RPS", w:0.08}
-];
-
-const mockScores = () => skills.map(s => ({
-  ...s,
-  score: Math.min(100, Math.round(40 + Math.random() * 55))
-}));
-
-function renderResult(scores) {
-  const global = Math.round(scores.reduce((a,s) => a + s.score * s.w, 0));
-  const label = global >= 75 ? "Très bonne adéquation" : global >= 55 ? "Adéquation prometteuse" : "Profil à explorer";
-  const desc = global >= 75 ? "Votre profil correspond fortement aux besoins actuels du projet." : global >= 55 ? "Plusieurs de vos compétences sont pertinentes — nous serions ravis d'en discuter." : "Votre profil est différent des compétences prioritaires, mais n'hésitez pas à nous écrire.";
-
-  const panel = document.getElementById('resultPanel');
-  panel.style.display = 'block';
-  panel.innerHTML = `
-    <div class="global-score">
-      <div class="big-pct">${global}%</div>
-      <div class="global-desc">
-        <p>${label}</p>
-        <small>${desc}</small>
-      </div>
-    </div>
-    ${scores.map(s => `
-      <div class="score-row">
-        <span class="score-label">${s.label}</span>
-        <div class="bar-bg"><div class="bar-fill" style="width:0%" data-w="${s.score}"></div></div>
-        <span class="score-pct">${s.score}%</span>
-      </div>
-    `).join('')}
-    <button class="cta-btn" style="margin-top:1.5rem;width:100%;padding:11px" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Nous contacter pour en discuter</button>
-  `;
-  setTimeout(() => {
-    panel.querySelectorAll('.bar-fill').forEach(b => b.style.width = b.dataset.w + '%');
-  }, 80);
-}
-
-function showLoading() {
-  const panel = document.getElementById('resultPanel');
-  panel.style.display = 'block';
-  panel.innerHTML = `<p style="font-size:14px;color:var(--color-text-secondary);padding:1rem 0"><span class="spinner"></span>Analyse du CV en cours…</p>`;
-}
-
-document.getElementById('cvInput').addEventListener('change', e => {
-  if (!e.target.files.length) return;
-  showLoading();
-  setTimeout(() => renderResult(mockScores()), 1800);
-});
-
-const drop = document.getElementById('dropArea');
-drop.addEventListener('dragover', e => { e.preventDefault(); drop.style.background='var(--b100)'; });
-drop.addEventListener('dragleave', () => drop.style.background='var(--b50)');
-drop.addEventListener('drop', e => {
-  e.preventDefault();
-  drop.style.background='var(--b50)';
-  if (e.dataTransfer.files.length) { showLoading(); setTimeout(() => renderResult(mockScores()), 1800); }
-});
-</script></body>
+</body>
 </html>

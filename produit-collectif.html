@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santé mentale collective — FeelBack</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230C447C'/%3E%3Ccircle cx='16' cy='16' r='8' stroke='%23fff' stroke-width='1.8' fill='none'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23fff'/%3E%3Cpath d='M16 10c3.31 0 6 2.69 6 6' stroke='%23378ADD' stroke-width='1.8' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+</head>
+<body>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --b50:#E6F1FB;--b100:#B5D4F4;--b200:#85B7EB;--b400:#378ADD;--b600:#185FA5;--b800:#0C447C;--b900:#042C53;
+    --color-background-primary:#ffffff;
+    --color-background-secondary:#f5f7fa;
+    --color-text-primary:#042C53;
+    --color-text-secondary:#5a6a80;
+    --color-border-tertiary:#e2e8f0;
+    --border-radius-md:8px;
+    --border-radius-lg:14px;
+    --font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  }
+  body{font-family:var(--font-sans);background:var(--color-background-primary);color:var(--color-text-primary)}
+  section{padding:5rem 2.5rem}
+  .container{max-width:900px;margin:0 auto}
+  .section-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1.8px;color:var(--b400);margin-bottom:0.75rem}
+  h1{font-size:44px;font-weight:500;line-height:1.18;color:var(--b900);max-width:700px;letter-spacing:-0.7px}
+  h1 em{font-style:normal;color:var(--b400)}
+  h2{font-size:28px;font-weight:500;color:var(--b900);letter-spacing:-0.4px;line-height:1.3;margin-bottom:1rem}
+  .hero-sub{font-size:17px;color:var(--color-text-secondary);max-width:580px;line-height:1.7;margin-top:1.25rem}
+  .tag{display:inline-block;font-size:12px;font-weight:500;color:var(--b800);background:var(--b50);border:0.5px solid var(--b100);border-radius:20px;padding:4px 14px;margin-bottom:1.25rem;letter-spacing:0.3px}
+  .section-intro{font-size:16px;color:var(--color-text-secondary);line-height:1.7;margin-top:0.75rem;max-width:640px}
+  .cta-btn{background:var(--b600);color:#fff;border:none;border-radius:var(--border-radius-md);padding:9px 20px;font-size:14px;cursor:pointer;font-weight:500;transition:background 0.2s;text-decoration:none;display:inline-block}
+  .cta-btn:hover{background:var(--b800)}
+  .sep{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:0}
+  .ico-svg{width:18px;height:18px;stroke:var(--b400);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  .feat-list{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.5rem}
+  .feat{display:flex;gap:14px;align-items:flex-start;padding:1.5rem;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg)}
+  .feat-ico{width:36px;height:36px;border-radius:var(--border-radius-md);background:var(--b50);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+  .feat h4{font-size:15px;font-weight:500;color:var(--b900);margin-bottom:5px}
+  .feat p{font-size:13px;color:var(--color-text-secondary);line-height:1.65}
+  .use-case-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.25rem;margin-top:2.5rem}
+  .use-case{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.5rem;background:var(--color-background-primary)}
+  .use-case .uc-icon{font-size:24px;margin-bottom:0.75rem}
+  .use-case h4{font-size:15px;font-weight:500;color:var(--b900);margin-bottom:0.5rem}
+  .use-case p{font-size:13px;color:var(--color-text-secondary);line-height:1.65}
+  .hero-accent{background:var(--b50);border:0.5px solid var(--b100);border-radius:var(--border-radius-lg);padding:2.5rem 3rem;margin-top:3rem}
+  .hero-accent p{font-size:16px;color:var(--b800);line-height:1.7}
+  .hero-accent strong{color:var(--b600);font-weight:500}
+  .guarantee-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+  .guarantee{padding:1.25rem 1.5rem;border:0.5px solid var(--b100);border-radius:var(--border-radius-lg);background:var(--b50)}
+  .guarantee h4{font-size:14px;font-weight:500;color:var(--b900);margin-bottom:4px}
+  .guarantee p{font-size:13px;color:var(--color-text-secondary);line-height:1.6}
+  footer{border-top:0.5px solid var(--color-border-tertiary);padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:var(--color-background-primary);flex-wrap:wrap;gap:1rem}
+  footer p{font-size:13px;color:var(--color-text-secondary)}
+  .footer-links{display:flex;gap:1.5rem}
+  .footer-links a{font-size:13px;color:var(--color-text-secondary);text-decoration:none}
+  .footer-links a:hover{color:var(--b600)}
+  @media(max-width:768px){
+    .use-case-grid{grid-template-columns:1fr}
+    .guarantee-grid{grid-template-columns:1fr}
+  }
+</style>
+
+<script src="nav.js"></script>
+
+<!-- Hero -->
+<section style="padding-top:6rem;padding-bottom:4rem;background:linear-gradient(180deg,var(--b50) 0%,transparent 100%)">
+  <div class="container">
+    <div class="tag">Produit · Collectif</div>
+    <h1>La santé mentale de vos équipes,<br><em>enfin mesurable</em></h1>
+    <p class="hero-sub">FeelBack fournit aux organisations des indicateurs fiables, éthiques et actionnables pour prévenir les risques psychosociaux avant qu'ils ne se transforment en crises.</p>
+    <div style="margin-top:2.5rem">
+      <a href="partenaire.html" class="cta-btn">Devenir partenaire</a>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- Problème -->
+<section>
+  <div class="container">
+    <p class="section-label">Le problème</p>
+    <h2>Les RPS coûtent cher — et restent invisibles</h2>
+    <p class="section-intro">Burn-out, absentéisme, turnover, désengagement : les signaux existent mais ne sont jamais agrégés ni analysés à temps. Les organisations naviguent à l'aveugle.</p>
+    <div class="hero-accent">
+      <p>Le coût du stress au travail représente <strong>entre 2 et 3 milliards d'euros par an</strong> pour l'économie française. La majorité est évitable avec les bons indicateurs, au bon moment.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- Fonctionnalités -->
+<section style="background:var(--color-background-secondary)">
+  <div class="container">
+    <p class="section-label">Ce que FeelBack apporte</p>
+    <h2>Des outils pour décider, pas juste pour mesurer</h2>
+    <div class="feat-list">
+      <div class="feat">
+        <div class="feat-ico"><svg class="ico-svg" viewBox="0 0 24 24"><path d="M2 20h20M6 20V10M12 20V4M18 20v-6"/></svg></div>
+        <div><h4>Tableaux de bord RPS</h4><p>Indicateurs agrégés et anonymisés par équipe, département ou site — avec alertes précoces automatiques.</p></div>
+      </div>
+      <div class="feat">
+        <div class="feat-ico"><svg class="ico-svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div><h4>Décomposition intra/extra-sujet</h4><p>Identifier si les difficultés viennent de l'organisation ou des individus permet d'agir au bon endroit.</p></div>
+      </div>
+      <div class="feat">
+        <div class="feat-ico"><svg class="ico-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <div><h4>Suivi longitudinal des équipes</h4><p>Suivez l'évolution de la santé mentale collective dans le temps, avant et après des changements organisationnels.</p></div>
+      </div>
+      <div class="feat">
+        <div class="feat-ico"><svg class="ico-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><h4>Confidentialité garantie</h4><p>Aucune donnée individuelle n'est accessible aux managers. Seulement des agrégats statistiques, jamais identifiants.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- Cas d'usage -->
+<section>
+  <div class="container">
+    <p class="section-label">Cas d'usage</p>
+    <h2>Pour qui, pour quoi</h2>
+    <div class="use-case-grid">
+      <div class="use-case">
+        <div class="uc-icon">🏢</div>
+        <h4>DRH & Responsables QVT</h4>
+        <p>Pilotez la santé mentale comme un indicateur stratégique RH. Justifiez vos actions et mesurez leur impact réel.</p>
+      </div>
+      <div class="use-case">
+        <div class="uc-icon">📋</div>
+        <h4>Médecins du travail</h4>
+        <p>Disposez de données longitudinales pour affiner vos analyses de risques et adapter vos recommandations.</p>
+      </div>
+      <div class="use-case">
+        <div class="uc-icon">🎯</div>
+        <h4>Managers & équipes</h4>
+        <p>Comprenez les dynamiques collectives de votre équipe sans jamais exposer les données individuelles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- Garanties éthiques -->
+<section style="background:var(--color-background-secondary)">
+  <div class="container">
+    <p class="section-label">Éthique & conformité</p>
+    <h2>Des garanties non négociables</h2>
+    <p class="section-intro">La confiance des employés est la condition de l'efficacité. Nous avons conçu FeelBack pour que les deux ne soient jamais en tension.</p>
+    <div class="guarantee-grid">
+      <div class="guarantee"><h4>🔒 Anonymisation systématique</h4><p>Aucun résultat individuel n'est accessible à l'organisation sans consentement explicite de l'employé.</p></div>
+      <div class="guarantee"><h4>⚖️ Conformité RGPD</h4><p>Architecture conforme par conception, avec hébergement des données en France.</p></div>
+      <div class="guarantee"><h4>🤝 Consentement éclairé</h4><p>Chaque employé choisit librement de participer et peut retirer ses données à tout moment.</p></div>
+      <div class="guarantee"><h4>🧪 Validation clinique</h4><p>Tous les indicateurs sont issus de la recherche clinique validée — pas de métriques maison non testées.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- CTA -->
+<section style="background:var(--b900);text-align:center">
+  <div class="container" style="max-width:620px">
+    <p class="section-label" style="color:var(--b200)">Partenariat</p>
+    <h2 style="color:#fff;margin-bottom:1rem">Intégrer FeelBack dans votre organisation</h2>
+    <p style="font-size:16px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:2rem">Nous travaillons avec un nombre limité d'organisations partenaires pour co-construire et valider le produit. Prenez contact pour en savoir plus.</p>
+    <a href="partenaire.html" class="cta-btn" style="padding:12px 28px;font-size:15px">Devenir partenaire →</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 FeelBack — Tous droits réservés</p>
+  <div class="footer-links">
+    <a href="index.html#vision">Vision</a>
+    <a href="index.html#produit">Produit</a>
+    <a href="index.html#communs">Communs</a>
+    <a href="rejoindre.html">Rejoindre</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partenaire — FeelBack</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230C447C'/%3E%3Ccircle cx='16' cy='16' r='8' stroke='%23fff' stroke-width='1.8' fill='none'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23fff'/%3E%3Cpath d='M16 10c3.31 0 6 2.69 6 6' stroke='%23378ADD' stroke-width='1.8' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+</head>
+<body>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --b50:#E6F1FB;--b100:#B5D4F4;--b200:#85B7EB;--b400:#378ADD;--b600:#185FA5;--b800:#0C447C;--b900:#042C53;
+    --color-background-primary:#ffffff;
+    --color-background-secondary:#f5f7fa;
+    --color-text-primary:#042C53;
+    --color-text-secondary:#5a6a80;
+    --color-border-tertiary:#e2e8f0;
+    --border-radius-md:8px;
+    --border-radius-lg:14px;
+    --font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  }
+  body{font-family:var(--font-sans);background:var(--color-background-primary);color:var(--color-text-primary)}
+  section{padding:5rem 2.5rem}
+  .container{max-width:900px;margin:0 auto}
+  .section-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1.8px;color:var(--b400);margin-bottom:0.75rem}
+  h1{font-size:44px;font-weight:500;line-height:1.18;color:var(--b900);max-width:700px;letter-spacing:-0.7px}
+  h1 em{font-style:normal;color:var(--b400)}
+  h2{font-size:28px;font-weight:500;color:var(--b900);letter-spacing:-0.4px;line-height:1.3;margin-bottom:1rem}
+  .hero-sub{font-size:17px;color:var(--color-text-secondary);max-width:580px;line-height:1.7;margin-top:1.25rem}
+  .tag{display:inline-block;font-size:12px;font-weight:500;color:var(--b800);background:var(--b50);border:0.5px solid var(--b100);border-radius:20px;padding:4px 14px;margin-bottom:1.25rem;letter-spacing:0.3px}
+  .section-intro{font-size:16px;color:var(--color-text-secondary);line-height:1.7;margin-top:0.75rem;max-width:640px}
+  .cta-btn{background:var(--b600);color:#fff;border:none;border-radius:var(--border-radius-md);padding:9px 20px;font-size:14px;cursor:pointer;font-weight:500;transition:background 0.2s;text-decoration:none;display:inline-block}
+  .cta-btn:hover{background:var(--b800)}
+  .sep{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:0}
+  .ico-svg{width:18px;height:18px;stroke:var(--b400);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  .partner-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.25rem;margin-top:2.5rem}
+  .partner-card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.75rem;background:var(--color-background-primary)}
+  .partner-card .icon{font-size:28px;margin-bottom:1rem}
+  .partner-card h3{font-size:16px;font-weight:500;color:var(--b900);margin-bottom:0.6rem}
+  .partner-card p{font-size:13px;color:var(--color-text-secondary);line-height:1.65}
+  .benefit-list{margin-top:2.5rem;display:flex;flex-direction:column;gap:1rem}
+  .benefit{display:flex;gap:1rem;align-items:flex-start;padding:1.25rem 1.5rem;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);background:var(--color-background-primary)}
+  .benefit-ico{width:36px;height:36px;border-radius:var(--border-radius-md);background:var(--b50);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+  .benefit h4{font-size:15px;font-weight:500;color:var(--b900);margin-bottom:4px}
+  .benefit p{font-size:13px;color:var(--color-text-secondary);line-height:1.65}
+  .steps{margin-top:2.5rem;display:flex;flex-direction:column;gap:1.25rem}
+  .step{display:flex;gap:1.25rem;align-items:flex-start}
+  .step-num{width:32px;height:32px;border-radius:50%;background:var(--b800);color:#fff;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+  .step-body h4{font-size:15px;font-weight:500;color:var(--b900);margin-bottom:4px}
+  .step-body p{font-size:14px;color:var(--color-text-secondary);line-height:1.65}
+  .contact-form input,.contact-form textarea{width:100%;margin-bottom:1rem;font-family:var(--font-sans);padding:10px 14px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);font-size:14px;color:var(--color-text-primary)}
+  .contact-form textarea{height:120px;resize:vertical}
+  footer{border-top:0.5px solid var(--color-border-tertiary);padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:var(--color-background-primary);flex-wrap:wrap;gap:1rem}
+  footer p{font-size:13px;color:var(--color-text-secondary)}
+  .footer-links{display:flex;gap:1.5rem}
+  .footer-links a{font-size:13px;color:var(--color-text-secondary);text-decoration:none}
+  .footer-links a:hover{color:var(--b600)}
+  @media(max-width:768px){
+    .partner-grid{grid-template-columns:1fr}
+    .benefit-list .benefit{flex-direction:column;gap:0.75rem}
+  }
+</style>
+
+<script src="nav.js"></script>
+
+<!-- Hero -->
+<section style="padding-top:6rem;padding-bottom:4rem;background:linear-gradient(180deg,var(--b50) 0%,transparent 100%)">
+  <div class="container">
+    <div class="tag">Rejoindre · Partenaire</div>
+    <h1>Construire avec nous,<br><em>comme partenaire</em></h1>
+    <p class="hero-sub">Organisations de santé, entreprises, institutions publiques : devenez partenaire de FeelBack pour co-développer, valider et déployer les outils de demain.</p>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- Types de partenaires -->
+<section>
+  <div class="container">
+    <p class="section-label">Types de partenariat</p>
+    <h2>Plusieurs façons de s'engager</h2>
+    <div class="partner-grid">
+      <div class="partner-card">
+        <div class="icon">🏥</div>
+        <h3>Partenaire clinique</h3>
+        <p>Établissements de soin, cliniques, cabinets. Vous accédez à un outil de suivi avancé, nous accédons à des données de validation dans un cadre éthique rigoureux.</p>
+      </div>
+      <div class="partner-card">
+        <div class="icon">🏢</div>
+        <h3>Partenaire entreprise</h3>
+        <p>Grandes organisations ou ETI. Pilotez la santé mentale collective de vos équipes en avant-première et contribuez à façonner les indicateurs qui vous correspondent.</p>
+      </div>
+      <div class="partner-card">
+        <div class="icon">🎓</div>
+        <h3>Partenaire académique</h3>
+        <p>Laboratoires, universités, instituts de recherche. Collaborez sur des protocoles communs et accédez à une infrastructure de collecte de données robuste.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- Bénéfices -->
+<section style="background:var(--color-background-secondary)">
+  <div class="container">
+    <p class="section-label">Ce que vous y gagnez</p>
+    <h2>Les avantages du partenariat</h2>
+    <div class="benefit-list">
+      <div class="benefit">
+        <div class="benefit-ico"><svg class="ico-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><h4>Accès anticipé à la plateforme</h4><p>Vos équipes ou patients bénéficient de l'outil avant sa sortie publique, avec un accompagnement dédié à l'intégration.</p></div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-ico"><svg class="ico-svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+        <div><h4>Co-conception du produit</h4><p>Vos retours terrain façonnent directement les fonctionnalités développées. Vous ne subissez pas l'outil, vous le construisez.</p></div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-ico"><svg class="ico-svg" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div><h4>Publications et valorisation scientifique</h4><p>Pour les partenaires académiques et cliniques : co-signature des publications issues des données collectées en partenariat.</p></div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-ico"><svg class="ico-svg" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div><h4>Conditions tarifaires préférentielles</h4><p>Les partenaires fondateurs bénéficient de conditions économiques définies ensemble — et maintenues dans la durée.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- Comment ça se passe -->
+<section>
+  <div class="container">
+    <p class="section-label">Le processus</p>
+    <h2>Comment démarrer un partenariat</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>Prise de contact</h4>
+          <p>Remplissez le formulaire ci-dessous. Nous revenons vers vous sous 5 jours ouvrés pour un premier échange.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>Exploration mutuelle</h4>
+          <p>Un ou deux appels pour comprendre votre contexte, vos besoins et évaluer la compatibilité avec notre roadmap et notre éthique.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>Accord de partenariat</h4>
+          <p>Un document clair, court, qui définit les engagements réciproques, les conditions d'utilisation des données et les modalités économiques.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h4>Intégration & démarrage</h4>
+          <p>Accompagnement à l'intégration, formation des référents et accès à la plateforme en avant-première.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- Formulaire contact -->
+<section id="contact" style="background:var(--color-background-secondary)">
+  <div class="container">
+    <p class="section-label">Contact</p>
+    <h2>Discutons d'un partenariat</h2>
+    <p class="section-intro">Dites-nous qui vous êtes et ce que vous cherchez — nous vous répondons rapidement pour explorer ensemble si un partenariat a du sens.</p>
+    <div class="contact-form" style="max-width:540px;margin-top:2.5rem">
+      <input type="text" placeholder="Nom & prénom">
+      <input type="text" placeholder="Organisation">
+      <input type="email" placeholder="Adresse e-mail">
+      <select style="width:100%;margin-bottom:1rem;font-family:var(--font-sans);padding:10px 14px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);font-size:14px;color:var(--color-text-secondary);background:white">
+        <option value="">Type de partenariat envisagé…</option>
+        <option>Partenaire clinique</option>
+        <option>Partenaire entreprise</option>
+        <option>Partenaire académique</option>
+        <option>Autre</option>
+      </select>
+      <textarea placeholder="Décrivez votre contexte et vos attentes…"></textarea>
+      <button class="cta-btn" style="width:100%;padding:12px">Envoyer la demande</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 FeelBack — Tous droits réservés</p>
+  <div class="footer-links">
+    <a href="index.html#vision">Vision</a>
+    <a href="index.html#produit">Produit</a>
+    <a href="index.html#communs">Communs</a>
+    <a href="rejoindre.html">Rejoindre</a>
+  </div>
+</footer>
+</body>
+</html>
