@@ -142,7 +142,7 @@
   nav.innerHTML = `
     <a class="logo" href="index.html">
       <div class="logo-mark">
-        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg>
+        <img src="logo.svg" width="20" height="20" alt="FeelBack logo">
       </div>
       <span class="logo-text">Feel<span>Back</span></span>
     </a>
@@ -153,8 +153,8 @@
         <div class="dropdown">
           <span class="drop-label">Nos solutions</span>
           <hr class="drop-sep">
-          <a href="produit-individuel.html">🧠&nbsp; Santé mentale individuelle</a>
-          <a href="produit-collectif.html">🏢&nbsp; Santé mentale collective</a>
+          <a href="produit-individuel.html">Santé mentale individuelle</a>
+          <a href="produit-collectif.html">Santé mentale collective</a>
         </div>
       </li>
       <li class="nav-item"><a href="${base}#communs">Communs</a></li>
@@ -163,8 +163,8 @@
         <div class="dropdown">
           <span class="drop-label">Vous êtes…</span>
           <hr class="drop-sep">
-          <a href="rejoindre.html">🤝&nbsp; Comme collaborateur</a>
-          <a href="partenaire.html">🏛️&nbsp; Comme partenaire</a>
+          <a href="rejoindre.html">Comme collaborateur</a>
+          <a href="partenaire.html">Comme partenaire</a>
         </div>
       </li>
     </ul>
@@ -177,11 +177,11 @@
       <a href="${base}#vision">Vision</a>
       <a href="${base}#communs">Communs</a>
       <span class="mob-group-label">Produit</span>
-      <a href="produit-individuel.html" class="mob-sub">🧠 Santé mentale individuelle</a>
-      <a href="produit-collectif.html" class="mob-sub">🏢 Santé mentale collective</a>
+      <a href="produit-individuel.html" class="mob-sub">Santé mentale individuelle</a>
+      <a href="produit-collectif.html" class="mob-sub">Santé mentale collective</a>
       <span class="mob-group-label">Rejoindre</span>
-      <a href="rejoindre.html" class="mob-sub">🤝 Comme collaborateur</a>
-      <a href="partenaire.html" class="mob-sub">🏛️ Comme partenaire</a>
+      <a href="rejoindre.html" class="mob-sub">Comme collaborateur</a>
+      <a href="partenaire.html" class="mob-sub">Comme partenaire</a>
       <a href="https://drive.google.com/drive/folders/1YDlfqSPVTVewPGZG9AequrQ0gIMIS3y9?usp=drive_link" target="_blank" class="mob-cta">Demander l'accès au drive</a>
     </div>
   `;
