@@ -142,22 +142,7 @@
   }
 </style>
 
-<nav>
-  <a class="logo" href="#">
-    <div class="logo-mark">
-      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4"/><circle cx="12" cy="12" r="1.5" fill="#fff" stroke="none"/></svg>
-    </div>
-    <span class="logo-text">Feel<span>Back</span></span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#vision">Vision</a></li>
-    <li><a href="#produit">Produit</a></li>
-    <li><a href="#communs">Communs</a></li>
-    <li><a href="#rejoindre">Rejoindre</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="https://drive.google.com/drive/folders/1YDlfqSPVTVewPGZG9AequrQ0gIMIS3y9?usp=drive_link" target="_blank" class="cta-btn">Demander l'accès au drive</a>
-</nav>
+<script src="nav.js"></script>
 
 <section id="accueil" style="padding-top:6rem;padding-bottom:6rem;background:linear-gradient(180deg,var(--b50) 0%,transparent 100%)">
   <div class="container">
@@ -194,15 +179,18 @@
         <h3>Causes extra-sujet</h3>
         <p>Analyse des pressions environnementales, organisationnelles et sociales qui conditionnent la santé mentale des individus.</p>
       </div>
+    </div>
+    <p class="section-label" style="margin-top:3.5rem">Nos valeurs</p>
+    <div class="vision-grid" style="margin-top:1rem">
       <div class="v-card">
-        <div class="ico"><svg class="ico-svg" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h3>Recherche translationnelle</h3>
-        <p>Un pont entre la recherche fondamentale et la clinique, pour que les avancées scientifiques bénéficient directement aux patients.</p>
+        <div class="ico"><svg class="ico-svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Gouvernance partagée</h3>
+        <p>Un modèle organisationnel distribué, où la prise de décision implique l'ensemble des contributeurs.</p>
       </div>
       <div class="v-card">
-        <div class="ico"><svg class="ico-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 17h7M17 14v7"/></svg></div>
-        <h3>Réduction des RPS</h3>
-        <p>Des indicateurs de santé mentale fiables pour éclairer les décisions stratégiques des organisations et améliorer les conditions de travail.</p>
+        <div class="ico"><svg class="ico-svg" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Valeur distribuée</h3>
+        <p>La valeur créée est partagée entre tous ceux qui prennent le risque de construire — pas seulement les fondateurs.</p>
       </div>
     </div>
   </div>
@@ -235,6 +223,10 @@
         <div class="feat-ico"><svg class="ico-svg" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
         <div><h4>Tableaux de bord organisationnels</h4><p>Indicateurs agrégés et anonymisés pour les décideurs, orientés prévention des RPS.</p></div>
       </div>
+      <div class="feat" style="grid-column:1/-1">
+        <div class="feat-ico"><svg class="ico-svg" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <div><h4>Réduction des RPS</h4><p>Des indicateurs de santé mentale fiables pour éclairer les décisions stratégiques des organisations et améliorer les conditions de travail.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -247,10 +239,9 @@
       <p class="section-label">Les communs</p>
       <h2>Construire autrement</h2>
       <p class="section-intro">Une organisation qui diffuse le risque pour diffuser la valeur — des outils et savoirs produits en commun, accessibles à tous.</p>
-      <div class="communs-grid">
+      <div class="communs-grid" style="grid-template-columns:1fr 1fr">
         <div class="communs-card"><h4>Open science</h4><p>Les protocoles, modèles et résultats de recherche sont partagés librement avec la communauté scientifique.</p></div>
-        <div class="communs-card"><h4>Gouvernance partagée</h4><p>Un modèle organisationnel distribué, où la prise de décision implique l'ensemble des contributeurs.</p></div>
-        <div class="communs-card"><h4>Valeur distribuée</h4><p>La valeur créée est partagée entre tous ceux qui prennent le risque de construire — pas seulement les fondateurs.</p></div>
+        <div class="communs-card"><h4>Recherche translationnelle</h4><p>Un pont entre la recherche fondamentale et la clinique, pour que les avancées scientifiques bénéficient directement aux patients.</p></div>
       </div>
     </div>
   </div>
@@ -258,76 +249,12 @@
 
 <hr class="sep">
 
-<section id="rejoindre">
-  <div class="container">
+<section id="rejoindre" style="background:var(--b50)">
+  <div class="container" style="text-align:center;max-width:640px">
     <p class="section-label">Rejoindre</p>
     <h2>Contribuer au projet</h2>
-    <p class="section-intro">Nous accueillons des profils engagés — cliniciens, chercheurs, ingénieurs, professionnels du soin ou du service public — qui souhaitent agir sans renoncer à leurs valeurs.</p>
-
-    <div class="drive-banner">
-      <div>
-        <p style="font-weight:500">Documentation & ressources du projet
-          <span>Accédez à notre philosophie organisationnelle, nos processus et nos documents fondateurs.</span>
-        </p>
-      </div>
-      <a href="https://drive.google.com/drive/folders/1YDlfqSPVTVewPGZG9AequrQ0gIMIS3y9?usp=drive_link" target="_blank" class="cta-btn" style="white-space:nowrap;font-size:13px;padding:9px 18px">Demander l'accès au Drive</a>
-    </div>
-
-    <div class="join-grid">
-      <div class="join-card">
-        <div class="join-tag">Clinique & Recherche</div>
-        <h3>Psychiatres, psychologues, chercheurs</h3>
-        <p>Contribuez à l'intégration du SOTA clinique dans un outil de suivi réel. Votre expertise est constitutive du produit.</p>
-        <button class="cta-btn outline" style="font-size:13px;padding:7px 16px">Postuler</button>
-      </div>
-      <div class="join-card">
-        <div class="join-tag">Ingénierie & Data</div>
-        <h3>Développeurs, data scientists, ML engineers</h3>
-        <p>Construisez une infrastructure de santé mentale ouverte, robuste et souveraine, en lien direct avec la recherche.</p>
-        <button class="cta-btn outline" style="font-size:13px;padding:7px 16px">Postuler</button>
-      </div>
-      <div class="join-card">
-        <div class="join-tag">Organisations & RH</div>
-        <h3>DRH, responsables QVT, managers</h3>
-        <p>Pilotez la santé mentale de vos équipes avec des indicateurs fiables, éthiques et actionnables.</p>
-        <button class="cta-btn outline" style="font-size:13px;padding:7px 16px">Nous contacter</button>
-      </div>
-      <div class="join-card" style="border:0.5px solid var(--b100);background:var(--b50)">
-        <div class="join-tag">Notre modèle</div>
-        <h3>Une intégration en deux temps</h3>
-        <p>Une phase d'immersion courte et transparente, puis une collaboration rémunérée avec plus de flexibilité et d'impact réel.</p>
-        <a href="https://drive.google.com/drive/folders/1YDlfqSPVTVewPGZG9AequrQ0gIMIS3y9?usp=drive_link" target="_blank" class="cta-btn" style="font-size:13px;padding:7px 16px">En savoir plus</a>
-      </div>
-    </div>
-
-    <div class="cv-zone">
-      <h3>Testez votre adéquation au projet</h3>
-      <p class="sub">Déposez votre CV (PDF) — notre outil analyse votre profil et calcule votre adéquation avec les compétences recherchées du moment.</p>
-      <div class="drop-area" id="dropArea" onclick="document.getElementById('cvInput').click()">
-        <svg style="width:32px;height:32px;stroke:var(--b400);fill:none;stroke-width:1.3;stroke-linecap:round;margin-bottom:12px" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-        <p>Glissez votre CV ici ou cliquez pour parcourir</p>
-        <small>PDF · max 5 Mo</small>
-        <input type="file" id="cvInput" accept=".pdf">
-      </div>
-      <div class="result-panel" id="resultPanel"></div>
-    </div>
-  </div>
-</section>
-
-<hr class="sep">
-
-<section id="contact" style="background:var(--color-background-secondary)">
-  <div class="container">
-    <p class="section-label">Contact</p>
-    <h2>Entrer en contact</h2>
-    <p class="section-intro">Une question, une proposition de collaboration, ou simplement l'envie d'en savoir plus — écrivez-nous.</p>
-    <div class="contact-form">
-      <input type="text" placeholder="Nom & prénom">
-      <input type="email" placeholder="Adresse e-mail">
-      <input type="text" placeholder="Organisation (optionnel)">
-      <textarea placeholder="Votre message…"></textarea>
-      <button class="cta-btn" style="width:100%;padding:12px">Envoyer le message</button>
-    </div>
+    <p class="section-intro" style="margin:1rem auto 2rem">Cliniciens, chercheurs, ingénieurs, professionnels RH — découvrez comment intégrer le projet, notre modèle de rémunération et testez votre adéquation.</p>
+    <a href="rejoindre.html" class="cta-btn" style="padding:13px 32px;font-size:15px">Voir la page Rejoindre →</a>
   </div>
 </section>
 
@@ -335,10 +262,9 @@
   <p>© 2026 FeelBack — Tous droits réservés</p>
   <div class="footer-links">
     <a href="#vision">Vision</a>
-    <a href="#produit">Produit</a>
     <a href="#communs">Communs</a>
+    <a href="#produit">Produit</a>
     <a href="#rejoindre">Rejoindre</a>
-    <a href="#contact">Contact</a>
   </div>
 </footer>
 

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rejoindre — FeelBack</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230C447C'/%3E%3Ccircle cx='16' cy='16' r='8' stroke='%23fff' stroke-width='1.8' fill='none'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23fff'/%3E%3Cpath d='M16 10c3.31 0 6 2.69 6 6' stroke='%23378ADD' stroke-width='1.8' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+</head>
+<body>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --b50:#E6F1FB;--b100:#B5D4F4;--b200:#85B7EB;--b400:#378ADD;--b600:#185FA5;--b800:#0C447C;--b900:#042C53;
+    --color-background-primary:#ffffff;
+    --color-background-secondary:#f5f7fa;
+    --color-text-primary:#042C53;
+    --color-text-secondary:#5a6a80;
+    --color-border-tertiary:#e2e8f0;
+    --border-radius-md:8px;
+    --border-radius-lg:14px;
+    --font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  }
+  body{font-family:var(--font-sans);background:var(--color-background-primary);color:var(--color-text-primary)}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 2.5rem;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);position:sticky;top:0;z-index:100}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .logo-mark{width:34px;height:34px;border-radius:9px;background:var(--b800);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .logo-mark svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .logo-text{font-size:17px;font-weight:500;color:var(--b900);letter-spacing:-0.3px}
+  .logo-text span{color:var(--b400)}
+  .nav-links{display:flex;gap:2rem;list-style:none}
+  .nav-links a{font-size:14px;color:var(--color-text-secondary);text-decoration:none;transition:color 0.2s}
+  .nav-links a:hover,.nav-links a.active{color:var(--b600)}
+  .cta-btn{background:var(--b600);color:#fff;border:none;border-radius:var(--border-radius-md);padding:9px 20px;font-size:14px;cursor:pointer;font-weight:500;transition:background 0.2s;text-decoration:none;display:inline-block}
+  .cta-btn:hover{background:var(--b800)}
+  .cta-btn.outline{background:transparent;color:var(--b600);border:0.5px solid var(--b400)}
+  .cta-btn.outline:hover{background:var(--b50)}
+  section{padding:5rem 2.5rem}
+  .container{max-width:900px;margin:0 auto}
+  .section-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1.8px;color:var(--b400);margin-bottom:0.75rem}
+  h1{font-size:44px;font-weight:500;line-height:1.18;color:var(--b900);max-width:700px;letter-spacing:-0.7px}
+  h1 em{font-style:normal;color:var(--b400)}
+  h2{font-size:42px;font-weight:500;color:var(--b900);letter-spacing:-0.5px;line-height:1.25}
+  .section-intro{font-size:16px;color:var(--color-text-secondary);line-height:1.7;margin-top:1rem;max-width:620px}
+  .hero-sub{font-size:17px;color:var(--color-text-secondary);max-width:560px;line-height:1.7;margin-top:1.25rem}
+  .tag{display:inline-block;font-size:12px;font-weight:500;color:var(--b800);background:var(--b50);border:0.5px solid var(--b100);border-radius:20px;padding:4px 14px;margin-bottom:1.25rem;letter-spacing:0.3px}
+  .join-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem}
+  .join-card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.75rem;background:var(--color-background-primary)}
+  .join-card h3{font-size:16px;font-weight:500;color:var(--b900);margin-bottom:0.75rem}
+  .join-card p{font-size:14px;color:var(--color-text-secondary);line-height:1.65}
+  .join-tag{font-size:12px;color:var(--b800);background:var(--b50);border:0.5px solid var(--b100);border-radius:20px;padding:3px 10px;display:inline-block;margin-bottom:1rem}
+  .drive-banner{background:var(--b50);border:0.5px solid var(--b100);border-radius:var(--border-radius-lg);padding:1.5rem 2rem;margin-top:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+  .drive-banner p{font-size:15px;color:var(--b800);line-height:1.5}
+  .drive-banner p span{display:block;font-size:13px;color:var(--b600);margin-top:3px;font-weight:400}
+  /* Rémunération */
+  .remun-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.25rem;margin-top:2.5rem}
+  .remun-card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.5rem;background:var(--color-background-primary)}
+  .remun-card .phase{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.4px;color:var(--b400);margin-bottom:0.5rem}
+  .remun-card h3{font-size:16px;font-weight:500;color:var(--b900);margin-bottom:0.75rem}
+  .remun-card p{font-size:13px;color:var(--color-text-secondary);line-height:1.65}
+  .remun-card .badge{display:inline-block;margin-top:1rem;font-size:12px;font-weight:500;background:var(--b50);color:var(--b800);border:0.5px solid var(--b100);border-radius:20px;padding:4px 12px}
+  .remun-card.highlight{background:var(--b900);border-color:var(--b800)}
+  .remun-card.highlight .phase{color:var(--b200)}
+  .remun-card.highlight h3{color:#fff}
+  .remun-card.highlight p{color:rgba(255,255,255,0.6)}
+  .remun-card.highlight .badge{background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.2)}
+  /* CV zone */
+  .cv-zone{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:2rem;margin-top:1.5rem}
+  .cv-zone h3{font-size:16px;font-weight:500;color:var(--b900);margin-bottom:0.5rem}
+  .cv-zone .sub{font-size:14px;color:var(--color-text-secondary);margin-bottom:1.5rem;line-height:1.6}
+  .drop-area{border:1.5px dashed var(--b200);border-radius:var(--border-radius-lg);padding:2.5rem;text-align:center;cursor:pointer;transition:background 0.2s;background:var(--b50)}
+  .drop-area:hover{background:var(--b100)}
+  .drop-area p{font-size:14px;color:var(--b600);font-weight:500}
+  .drop-area small{font-size:12px;color:var(--color-text-secondary);display:block;margin-top:4px}
+  .drop-area input{display:none}
+  .result-panel{margin-top:1.5rem;display:none}
+  .score-row{display:flex;align-items:center;gap:1rem;margin-bottom:0.75rem}
+  .score-label{font-size:13px;color:var(--color-text-secondary);min-width:160px}
+  .bar-bg{flex:1;height:8px;background:var(--color-background-secondary);border-radius:4px;overflow:hidden}
+  .bar-fill{height:100%;border-radius:4px;background:var(--b400);transition:width 1s ease}
+  .score-pct{font-size:13px;font-weight:500;color:var(--b800);min-width:36px;text-align:right}
+  .global-score{display:flex;align-items:center;gap:1.25rem;padding:1.25rem 1.5rem;background:var(--b50);border:0.5px solid var(--b100);border-radius:var(--border-radius-lg);margin-bottom:1.5rem}
+  .big-pct{font-size:36px;font-weight:500;color:var(--b800);line-height:1}
+  .global-desc p{font-size:14px;font-weight:500;color:var(--b900)}
+  .global-desc small{font-size:12px;color:var(--color-text-secondary)}
+  .spinner{width:18px;height:18px;border:2px solid var(--b100);border-top-color:var(--b600);border-radius:50%;animation:spin 0.7s linear infinite;display:inline-block;vertical-align:middle;margin-right:8px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .ico-svg{width:18px;height:18px;stroke:var(--b400);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  .sep{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:0}
+  footer{border-top:0.5px solid var(--color-border-tertiary);padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:var(--color-background-primary);flex-wrap:wrap;gap:1rem}
+  footer p{font-size:13px;color:var(--color-text-secondary)}
+  .footer-links{display:flex;gap:1.5rem}
+  .footer-links a{font-size:13px;color:var(--color-text-secondary);text-decoration:none}
+  .footer-links a:hover{color:var(--b600)}
+
+  @media(max-width:768px){
+    nav{padding:1rem 1.25rem}
+    .nav-links{display:none}
+    section{padding:3rem 1.25rem}
+    h1{font-size:30px}
+    h2{font-size:28px}
+    .join-grid{grid-template-columns:1fr}
+    .remun-grid{grid-template-columns:1fr}
+    .drive-banner{flex-direction:column;align-items:flex-start}
+    .drive-banner .cta-btn{width:100%;text-align:center}
+    footer{flex-direction:column;align-items:flex-start;padding:1.5rem 1.25rem}
+    .score-label{min-width:110px;font-size:12px}
+  }
+</style>
+
+<script src="nav.js"></script>
+
+<!-- Hero -->
+<section style="padding-top:6rem;padding-bottom:4rem;background:linear-gradient(180deg,var(--b50) 0%,transparent 100%)">
+  <div class="container">
+    <div class="tag">Rejoindre le projet</div>
+    <h1>Construire FeelBack,<br><em>ensemble</em></h1>
+    <p class="hero-sub">Nous accueillons des profils engagés — cliniciens, chercheurs, ingénieurs, professionnels du soin ou du service public — qui souhaitent agir sans renoncer à leurs valeurs.</p>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- Profils -->
+<section>
+  <div class="container">
+    <p class="section-label">Profils recherchés</p>
+    <h2>Qui peut contribuer ?</h2>
+    <p class="section-intro">Chaque profil apporte une dimension essentielle au projet. Nous recherchons des personnes motivées par l'impact réel, pas uniquement par la rémunération.</p>
+
+    <div class="join-grid">
+      <div class="join-card">
+        <div class="join-tag">Clinique & Recherche</div>
+        <h3>Psychiatres, psychologues, chercheurs</h3>
+        <p>Contribuez à l'intégration du SOTA clinique dans un outil de suivi réel. Votre expertise est constitutive du produit — de la conception des protocoles à la validation des modèles.</p>
+      </div>
+      <div class="join-card">
+        <div class="join-tag">Ingénierie & Data</div>
+        <h3>Développeurs, data scientists, ML engineers</h3>
+        <p>Construisez une infrastructure de santé mentale ouverte, robuste et souveraine, en lien direct avec la recherche clinique et les contraintes réglementaires.</p>
+      </div>
+      <div class="join-card">
+        <div class="join-tag">Organisations & RH</div>
+        <h3>DRH, responsables QVT, managers</h3>
+        <p>Pilotez la santé mentale de vos équipes avec des indicateurs fiables, éthiques et actionnables. Participez à la co-construction des tableaux de bord organisationnels.</p>
+      </div>
+      <div class="join-card" style="border-color:var(--b100);background:var(--b50)">
+        <div class="join-tag">Autre profil</div>
+        <h3>Une contribution que nous n'avons pas anticipée</h3>
+        <p>Le projet est ouvert. Si vous pensez pouvoir apporter quelque chose d'utile — en design, en droit, en communication ou ailleurs — écrivez-nous directement.</p>
+      </div>
+    </div>
+
+    <div class="drive-banner">
+      <div>
+        <p style="font-weight:500">Documentation & ressources du projet
+          <span>Philosophie organisationnelle, processus et documents fondateurs — tout est accessible sur le Drive.</span>
+        </p>
+      </div>
+      <a href="https://drive.google.com/drive/folders/1YDlfqSPVTVewPGZG9AequrQ0gIMIS3y9?usp=drive_link" target="_blank" class="cta-btn" style="white-space:nowrap;font-size:13px;padding:9px 18px">Accéder au Drive</a>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- Rémunération -->
+<section style="background:var(--color-background-secondary)">
+  <div class="container">
+    <p class="section-label">Modèle de rémunération</p>
+    <h2>Une intégration en deux temps</h2>
+    <p class="section-intro">Nous croyons en la transparence totale sur les conditions de collaboration. Voici comment fonctionne l'intégration et la rémunération au sein du projet.</p>
+
+    <div class="remun-grid">
+      <div class="remun-card">
+        <div class="phase">Phase 1 · Immersion</div>
+        <h3>Contribution initiale</h3>
+        <p>Une période courte (4 à 8 semaines) pour découvrir le projet, contribuer sur un périmètre défini et valider l'adéquation mutuelle. Non rémunérée, mais comptabilisée en equity.</p>
+        <span class="badge">Equity différé</span>
+      </div>
+      <div class="remun-card highlight">
+        <div class="phase">Phase 2 · Collaboration</div>
+        <h3>Contributeur actif</h3>
+        <p>Une collaboration régulière, rémunérée selon un barème transparent lié aux revenus du projet. Plus le projet croît, plus la rémunération augmente — pour tous.</p>
+        <span class="badge">Rémunération + Equity</span>
+      </div>
+      <div class="remun-card">
+        <div class="phase">Phase 3 · Fondateur associé</div>
+        <h3>Partenaire long terme</h3>
+        <p>Pour les contributeurs majeurs, une participation au capital selon les principes de gouvernance partagée — avec droit de vote et accès aux décisions stratégiques.</p>
+        <span class="badge">Capital + Gouvernance</span>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem;padding:1.5rem;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg)">
+      <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7">
+        <strong style="color:var(--b900);font-weight:500">Transparence totale.</strong> Le détail des barèmes, des critères d'évaluation et du calcul de l'equity est disponible dans notre documentation sur le Drive. Aucune décision n'est prise unilatéralement — les conditions évoluent avec l'accord de l'ensemble des contributeurs actifs.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- Testez votre adéquation -->
+<section>
+  <div class="container">
+    <p class="section-label">Outil RH</p>
+    <h2>Testez votre adéquation au projet</h2>
+    <p class="section-intro">Déposez votre CV (PDF) — notre outil analyse votre profil et calcule votre adéquation avec les compétences recherchées du moment.</p>
+
+    <div class="cv-zone" style="margin-top:2.5rem">
+      <h3>Analyse de profil</h3>
+      <p class="sub">L'analyse est instantanée et confidentielle. Elle vous donne une estimation de l'adéquation de votre profil avec les besoins actuels du projet, compétence par compétence.</p>
+      <div class="drop-area" id="dropArea" onclick="document.getElementById('cvInput').click()">
+        <svg style="width:32px;height:32px;stroke:var(--b400);fill:none;stroke-width:1.3;stroke-linecap:round;margin-bottom:12px" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <p>Glissez votre CV ici ou cliquez pour parcourir</p>
+        <small>PDF · max 5 Mo</small>
+        <input type="file" id="cvInput" accept=".pdf">
+      </div>
+      <div class="result-panel" id="resultPanel"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<section id="contact" style="background:var(--color-background-secondary)">
+  <div class="container">
+    <p class="section-label">Contact</p>
+    <h2>Entrer en contact</h2>
+    <p class="section-intro">Une question, une proposition de collaboration, ou simplement l'envie d'en savoir plus — écrivez-nous.</p>
+    <div style="max-width:540px;margin-top:2.5rem">
+      <input type="text" placeholder="Nom & prénom" style="width:100%;margin-bottom:1rem;font-family:var(--font-sans);padding:10px 14px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);font-size:14px">
+      <input type="email" placeholder="Adresse e-mail" style="width:100%;margin-bottom:1rem;font-family:var(--font-sans);padding:10px 14px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);font-size:14px">
+      <input type="text" placeholder="Organisation (optionnel)" style="width:100%;margin-bottom:1rem;font-family:var(--font-sans);padding:10px 14px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);font-size:14px">
+      <textarea placeholder="Votre message…" style="width:100%;margin-bottom:1rem;font-family:var(--font-sans);padding:10px 14px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);font-size:14px;height:120px;resize:vertical"></textarea>
+      <button class="cta-btn" style="width:100%;padding:12px">Envoyer le message</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 FeelBack — Tous droits réservés</p>
+  <div class="footer-links">
+    <a href="index.html#vision">Vision</a>
+    <a href="index.html#communs">Communs</a>
+    <a href="index.html#produit">Produit</a>
+    <a href="rejoindre.html">Rejoindre</a>
+    <a href="#contact">Contact</a>
+    <a href="rejoindre.html">Rejoindre</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+const skills = [
+  {label:"Psychiatrie clinique", w:0.25},
+  {label:"Machine learning / IA", w:0.22},
+  {label:"Psychiatrie computationnelle", w:0.18},
+  {label:"Ingénierie logicielle", w:0.15},
+  {label:"Recherche translationnelle", w:0.12},
+  {label:"Santé publique & RPS", w:0.08}
+];
+
+const mockScores = () => skills.map(s => ({
+  ...s,
+  score: Math.min(100, Math.round(40 + Math.random() * 55))
+}));
+
+function renderResult(scores) {
+  const global = Math.round(scores.reduce((a,s) => a + s.score * s.w, 0));
+  const label = global >= 75 ? "Très bonne adéquation" : global >= 55 ? "Adéquation prometteuse" : "Profil à explorer";
+  const desc = global >= 75 ? "Votre profil correspond fortement aux besoins actuels du projet." : global >= 55 ? "Plusieurs de vos compétences sont pertinentes — nous serions ravis d'en discuter." : "Votre profil est différent des compétences prioritaires, mais n'hésitez pas à nous écrire.";
+
+  const panel = document.getElementById('resultPanel');
+  panel.style.display = 'block';
+  panel.innerHTML = `
+    <div class="global-score">
+      <div class="big-pct">${global}%</div>
+      <div class="global-desc">
+        <p>${label}</p>
+        <small>${desc}</small>
+      </div>
+    </div>
+    ${scores.map(s => `
+      <div class="score-row">
+        <span class="score-label">${s.label}</span>
+        <div class="bar-bg"><div class="bar-fill" style="width:0%" data-w="${s.score}"></div></div>
+        <span class="score-pct">${s.score}%</span>
+      </div>
+    `).join('')}
+    <a href="index.html#contact" class="cta-btn" style="margin-top:1.5rem;width:100%;padding:11px;text-align:center;display:block">Nous contacter pour en discuter</a>
+  `;
+  setTimeout(() => {
+    panel.querySelectorAll('.bar-fill').forEach(b => b.style.width = b.dataset.w + '%');
+  }, 80);
+}
+
+function showLoading() {
+  const panel = document.getElementById('resultPanel');
+  panel.style.display = 'block';
+  panel.innerHTML = `<p style="font-size:14px;color:var(--color-text-secondary);padding:1rem 0"><span class="spinner"></span>Analyse du CV en cours…</p>`;
+}
+
+document.getElementById('cvInput').addEventListener('change', e => {
+  if (!e.target.files.length) return;
+  showLoading();
+  setTimeout(() => renderResult(mockScores()), 1800);
+});
+
+const drop = document.getElementById('dropArea');
+drop.addEventListener('dragover', e => { e.preventDefault(); drop.style.background='var(--b100)'; });
+drop.addEventListener('dragleave', () => drop.style.background='var(--b50)');
+drop.addEventListener('drop', e => {
+  e.preventDefault();
+  drop.style.background='var(--b50)';
+  if (e.dataTransfer.files.length) { showLoading(); setTimeout(() => renderResult(mockScores()), 1800); }
+});
+</script>
+</body>
+</html>
