@@ -1,4 +1,5 @@
 (function() {
+  function init() {
   const path = window.location.pathname;
   const isIndex = path.endsWith('index.html') || path.endsWith('/') || path === '';
   const base = isIndex ? '' : 'index.html';
@@ -200,12 +201,7 @@
     </div>
   `;
 
-  const script = document.currentScript;
-  if (script && script.parentNode) {
-    script.parentNode.insertBefore(nav, script);
-  } else {
-    document.body.insertBefore(nav, document.body.firstChild);
-  }
+  document.body.insertBefore(nav, document.body.firstChild);
 
   document.getElementById('navBurger').addEventListener('click', function() {
     this.classList.toggle('open');
@@ -219,4 +215,11 @@
       document.getElementById('navMobile').classList.remove('open');
     });
   });
+  } // end init
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
