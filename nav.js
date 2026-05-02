@@ -1,4 +1,109 @@
 (function() {
+
+  /* ── Password gate (désactivé) ───────────────────────────────
+  const PASSWORD = 'TMPfeelback2026';
+  const SESSION_KEY = 'fb_auth';
+
+  function showGate() {
+    const gate = document.createElement('div');
+    gate.id = 'fb-gate';
+    gate.innerHTML = `
+      <style>
+        #fb-gate {
+          position: fixed; inset: 0; z-index: 9999;
+          background: var(--b900, #042C53);
+          display: flex; align-items: center; justify-content: center;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        #fb-gate-box {
+          background: #fff; border-radius: 14px; padding: 2.5rem 2rem;
+          width: 100%; max-width: 360px; text-align: center;
+          box-shadow: 0 24px 64px rgba(4,44,83,0.25);
+        }
+        #fb-gate-box img { width: 36px; height: 36px; margin-bottom: 1.25rem; }
+        #fb-gate-box h2 { font-size: 20px; font-weight: 500; color: #042C53; margin-bottom: 0.35rem; letter-spacing: -0.3px; }
+        #fb-gate-box p { font-size: 13px; color: #5a6a80; margin-bottom: 1.5rem; }
+        #fb-gate-input {
+          width: 100%; padding: 10px 40px 10px 14px; font-size: 15px;
+          border: 0.5px solid #e2e8f0; border-radius: 8px;
+          outline: none; margin-bottom: 0.75rem;
+          font-family: inherit; color: #042C53;
+          transition: border-color 0.2s;
+        }
+        #fb-gate-input:focus { border-color: #378ADD; }
+        #fb-gate-input.error { border-color: #e05252; animation: shake 0.3s; }
+        #fb-gate-wrap { position: relative; margin-bottom: 0.75rem; }
+        #fb-gate-wrap #fb-gate-input { margin-bottom: 0; }
+        #fb-gate-toggle {
+          position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+          background: none; border: none; cursor: pointer; padding: 2px;
+          color: #5a6a80; display: flex; align-items: center;
+        }
+        #fb-gate-toggle:hover { color: #042C53; }
+        #fb-gate-toggle svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+        @keyframes shake {
+          0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)}
+        }
+        #fb-gate-btn {
+          width: 100%; padding: 11px; font-size: 15px; font-weight: 500;
+          background: #185FA5; color: #fff; border: none; border-radius: 8px;
+          cursor: pointer; font-family: inherit; transition: background 0.2s;
+        }
+        #fb-gate-btn:hover { background: #0C447C; }
+        #fb-gate-err { font-size: 12px; color: #e05252; margin-top: 0.5rem; min-height: 16px; }
+      </style>
+      <div id="fb-gate-box">
+        <img src="logo.svg" alt="FeelBack">
+        <h2>Accès restreint</h2>
+        <p>Ce site est en accès privé.<br>Entrez le mot de passe pour continuer.</p>
+        <div id="fb-gate-wrap">
+          <input id="fb-gate-input" type="password" placeholder="Mot de passe" autocomplete="current-password">
+          <button id="fb-gate-toggle" type="button" aria-label="Afficher le mot de passe">
+            <svg id="fb-eye-off" viewBox="0 0 24 24"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+            <svg id="fb-eye-on" viewBox="0 0 24 24" style="display:none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+        <button id="fb-gate-btn">Accéder →</button>
+        <div id="fb-gate-err"></div>
+      </div>
+    `;
+    document.body.insertBefore(gate, document.body.firstChild);
+    document.body.style.overflow = 'hidden';
+
+    const input = document.getElementById('fb-gate-input');
+    const btn = document.getElementById('fb-gate-btn');
+    const err = document.getElementById('fb-gate-err');
+    const toggle = document.getElementById('fb-gate-toggle');
+    const eyeOff = document.getElementById('fb-eye-off');
+    const eyeOn = document.getElementById('fb-eye-on');
+
+    toggle.addEventListener('click', () => {
+      const show = input.type === 'password';
+      input.type = show ? 'text' : 'password';
+      eyeOff.style.display = show ? 'none' : '';
+      eyeOn.style.display = show ? '' : 'none';
+      input.focus();
+    });
+    function attempt() {
+      if (input.value === PASSWORD) {
+        sessionStorage.setItem(SESSION_KEY, '1');
+        gate.remove();
+        document.body.style.overflow = '';
+      } else {
+        input.classList.add('error');
+        err.textContent = 'Mot de passe incorrect.';
+        setTimeout(() => input.classList.remove('error'), 400);
+        input.value = '';
+        input.focus();
+      }
+    }
+
+    btn.addEventListener('click', attempt);
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') attempt(); });
+    setTimeout(() => input.focus(), 50);
+  }
+  // ── fin password gate ─────────────────────────────────────────── */
+
   function init() {
   const path = window.location.pathname;
   const isIndex = path.endsWith('index.html') || path.endsWith('/') || path === '';
@@ -218,8 +323,12 @@
   } // end init
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', () => {
+      // if (!sessionStorage.getItem(SESSION_KEY)) showGate();
+      init();
+    });
   } else {
+    // if (!sessionStorage.getItem(SESSION_KEY)) showGate();
     init();
   }
 })();
