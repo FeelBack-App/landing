@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modèle économique — FeelBack</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+</head>
+<body>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --b50:#E6F1FB;--b100:#B5D4F4;--b200:#85B7EB;--b400:#378ADD;--b600:#185FA5;--b800:#0C447C;--b900:#042C53;
+    --color-background-primary:#ffffff;
+    --color-background-secondary:#f5f7fa;
+    --color-text-primary:#042C53;
+    --color-text-secondary:#5a6a80;
+    --color-border-tertiary:#e2e8f0;
+    --border-radius-md:8px;
+    --border-radius-lg:14px;
+    --font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  }
+  body{font-family:var(--font-sans);background:var(--color-background-primary);color:var(--color-text-primary)}
+  section{padding:5rem 2.5rem}
+  .container{max-width:900px;margin:0 auto}
+  .section-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1.8px;color:var(--b400);margin-bottom:0.75rem}
+  h1{font-size:44px;font-weight:500;line-height:1.18;color:var(--b900);max-width:700px;letter-spacing:-0.7px}
+  h1 em{font-style:normal;color:var(--b400)}
+  h2{font-size:26px;font-weight:500;color:var(--b900);letter-spacing:-0.4px;line-height:1.3;margin-bottom:1rem}
+  .hero-sub{font-size:17px;color:var(--color-text-secondary);max-width:580px;line-height:1.7;margin-top:1.25rem}
+  .tag{display:inline-block;font-size:12px;font-weight:500;color:var(--b800);background:var(--b50);border:0.5px solid var(--b100);border-radius:20px;padding:4px 14px;margin-bottom:1.25rem;letter-spacing:0.3px}
+  .section-intro{font-size:16px;color:var(--color-text-secondary);line-height:1.7;margin-top:0.75rem;max-width:640px}
+  .sep{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:0}
+  .ico-svg{width:18px;height:18px;stroke:var(--b400);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  .cta-btn{background:var(--b600);color:#fff;border:none;border-radius:var(--border-radius-md);padding:9px 20px;font-size:14px;cursor:pointer;font-weight:500;transition:background 0.2s;text-decoration:none;display:inline-block}
+  .cta-btn:hover{background:var(--b800)}
+  .cta-btn.outline{background:transparent;color:var(--b600);border:0.5px solid var(--b400)}
+  .cta-btn.outline:hover{background:var(--b50)}
+  /* Flux table */
+  .flux-table{width:100%;border-collapse:collapse;margin-top:2rem;font-size:14px}
+  .flux-table th{text-align:left;padding:10px 14px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.4px;color:var(--b400);border-bottom:0.5px solid var(--color-border-tertiary)}
+  .flux-table td{padding:12px 14px;border-bottom:0.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);line-height:1.55;vertical-align:top}
+  .flux-table td:first-child{font-weight:500;color:var(--b900);white-space:nowrap}
+  .flux-table tr:last-child td{border-bottom:none}
+  .live-badge{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;background:#e6f4ea;color:#1a7a3a;border:0.5px solid #a8d5b5;margin-left:8px;letter-spacing:0.3px}
+  /* Source cards */
+  .source-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem}
+  .source-card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.5rem;background:var(--color-background-primary)}
+  .source-card .s-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.4px;color:var(--b400);margin-bottom:0.5rem}
+  .source-card h3{font-size:16px;font-weight:500;color:var(--b900);margin-bottom:0.6rem}
+  .source-card p{font-size:13px;color:var(--color-text-secondary);line-height:1.65}
+  .source-card .amount{font-size:22px;font-weight:500;color:var(--b800);margin-top:0.75rem}
+  .source-card .amount span{font-size:13px;font-weight:400;color:var(--color-text-secondary);margin-left:4px}
+  /* Dark section */
+  .dark-section{background:var(--b900);border-radius:var(--border-radius-lg);padding:3rem;margin-top:0}
+  .dark-section h2{color:#fff}
+  .dark-section p{color:rgba(255,255,255,0.65);font-size:15px;line-height:1.7;margin-top:0.75rem;max-width:560px}
+  .dark-section .btn-row{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap}
+  footer{border-top:0.5px solid var(--color-border-tertiary);padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:var(--color-background-primary);flex-wrap:wrap;gap:1rem}
+  footer p{font-size:13px;color:var(--color-text-secondary)}
+  .footer-links{display:flex;gap:1.5rem}
+  .footer-links a{font-size:13px;color:var(--color-text-secondary);text-decoration:none}
+  .footer-links a:hover{color:var(--b600)}
+  @media(max-width:768px){
+    .source-grid{grid-template-columns:1fr}
+    .flux-table td:first-child{white-space:normal}
+  }
+</style>
+
+<script src="nav.js"></script>
+
+<!-- Hero -->
+<section style="padding-top:6rem;padding-bottom:4rem;background:linear-gradient(180deg,var(--b50) 0%,transparent 100%)">
+  <div class="container">
+    <div class="tag">Les communs — Transparence</div>
+    <h1>Modèle économique,<br><em>en clair</em></h1>
+    <p class="hero-sub">Nous publions ici notre modèle de revenus tel qu'il est — pas tel qu'on voudrait qu'il soit. Les flux réels sont mis à jour en temps réel.</p>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- Principe -->
+<section>
+  <div class="container">
+    <p class="section-label">Principe</p>
+    <h2>D'où vient l'argent</h2>
+    <p class="section-intro">FeelBack est un projet à but non lucratif structuré autour de la création de valeur partagée. Nos revenus sont fléchés explicitement : une part finance la recherche et les communs, une part rémunère les contributeurs, une part assure la pérennité de l'infrastructure.</p>
+    <div class="source-grid">
+      <div class="source-card">
+        <div class="s-label">Source principale</div>
+        <h3>Abonnements organisations</h3>
+        <p>Entreprises et institutions qui déploient le suivi collectif pour leurs équipes. Tarification à l'usage, plafonnée et publique.</p>
+        <div class="amount">— <span>en construction</span></div>
+      </div>
+      <div class="source-card">
+        <div class="s-label">Source secondaire</div>
+        <h3>Partenariats cliniques</h3>
+        <p>Cabinets, hôpitaux et réseaux de soin qui intègrent le suivi individuel dans leur pratique. Tarification solidaire selon le statut.</p>
+        <div class="amount">— <span>en construction</span></div>
+      </div>
+      <div class="source-card">
+        <div class="s-label">Source de démarrage</div>
+        <h3>Subventions & financement public</h3>
+        <p>Appels à projets ANR, appels européens (Horizon), financements institutionnels pour la recherche translationnelle.</p>
+        <div class="amount">— <span>en cours</span></div>
+      </div>
+      <div class="source-card">
+        <div class="s-label">Non-source</div>
+        <h3>Publicité & vente de données</h3>
+        <p>Nous ne vendons pas de données. Nous ne monétisons pas l'attention. Ce n'est pas un modèle envisageable, quelle que soit la situation.</p>
+        <div class="amount" style="color:#c0392b">✗ Exclu</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- Flux en temps réel -->
+<section style="background:var(--color-background-secondary)">
+  <div class="container">
+    <p class="section-label">Flux économiques <span class="live-badge">Mis à jour en temps réel</span></p>
+    <h2>Revenus & dépenses</h2>
+    <p class="section-intro">Ce tableau reflète les flux réels du projet. Pendant la phase de construction, la plupart des lignes sont à zéro — c'est normal, et c'est dit.</p>
+    <table class="flux-table">
+      <thead>
+        <tr>
+          <th>Poste</th>
+          <th>Type</th>
+          <th>Montant mensuel</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Abonnements organisations</td>
+          <td>Revenu</td>
+          <td>0 €</td>
+          <td>Produit non encore lancé</td>
+        </tr>
+        <tr>
+          <td>Partenariats cliniques</td>
+          <td>Revenu</td>
+          <td>0 €</td>
+          <td>Pilotes en cours de négociation</td>
+        </tr>
+        <tr>
+          <td>Subventions</td>
+          <td>Revenu</td>
+          <td>0 €</td>
+          <td>Dossiers en cours</td>
+        </tr>
+        <tr>
+          <td>Infrastructure & hébergement</td>
+          <td>Dépense</td>
+          <td>~30 €</td>
+          <td>Serveur de développement</td>
+        </tr>
+        <tr>
+          <td>Outils & licences</td>
+          <td>Dépense</td>
+          <td>~20 €</td>
+          <td>Services essentiels uniquement</td>
+        </tr>
+        <tr>
+          <td>Rémunérations contributeurs</td>
+          <td>Dépense</td>
+          <td>0 €</td>
+          <td>Phase bénévole — tokens différés</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- Répartition de la valeur -->
+<section>
+  <div class="container">
+    <p class="section-label">Répartition</p>
+    <h2>Comment la valeur est distribuée</h2>
+    <p class="section-intro">Quand des revenus existent, leur répartition suit des règles définies collectivement et publiques. Le principe est simple : ceux qui prennent le risque de construire participent à la valeur créée.</p>
+    <table class="flux-table" style="margin-top:2rem">
+      <thead>
+        <tr>
+          <th>Destination</th>
+          <th>Part cible</th>
+          <th>Principe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Contributeurs actifs</td>
+          <td>40 %</td>
+          <td>Proportionnel à la contribution pondérée par le risque pris</td>
+        </tr>
+        <tr>
+          <td>Recherche & communs</td>
+          <td>30 %</td>
+          <td>Financement de l'open science et des protocoles partagés</td>
+        </tr>
+        <tr>
+          <td>Pérennité de l'infrastructure</td>
+          <td>20 %</td>
+          <td>Réserve opérationnelle, sécurité, conformité</td>
+        </tr>
+        <tr>
+          <td>Fonds de solidarité</td>
+          <td>10 %</td>
+          <td>Accès au suivi pour les personnes qui ne peuvent pas payer</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:var(--color-text-secondary);margin-top:1rem">Ces proportions sont indicatives pour la phase actuelle. Elles sont amenées à être discutées et votées collectivement dès que le modèle décisionnel est en place.</p>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- CTA -->
+<section style="padding:4rem 2.5rem">
+  <div class="container">
+    <div class="dark-section">
+      <h2>Des questions sur le modèle ?</h2>
+      <p>Ce document est vivant. Si quelque chose n'est pas clair, ou si vous pensez qu'une ligne devrait exister et n'existe pas, écrivez-nous.</p>
+      <div class="btn-row">
+        <a href="modele-decisionnel.html" class="cta-btn">Voir le modèle décisionnel</a>
+        <a href="rejoindre.html" class="cta-btn outline" style="color:#fff;border-color:rgba(255,255,255,0.3)">Rejoindre le projet</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 FeelBack</p>
+  <div class="footer-links">
+    <a href="index.html#vision">Vision</a>
+    <a href="index.html#communs">Communs</a>
+    <a href="index.html#produit">Produit</a>
+    <a href="rejoindre.html">Rejoindre</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -153,16 +153,27 @@
         <div class="dropdown">
           <span class="drop-label">Nos solutions</span>
           <hr class="drop-sep">
+          <a href="${base}#produit">Vue d'ensemble</a>
           <a href="produit-individuel.html">Santé mentale individuelle</a>
           <a href="produit-collectif.html">Santé mentale collective</a>
         </div>
       </li>
-      <li class="nav-item"><a href="${base}#communs">Communs</a></li>
+      <li class="nav-item">
+        <a href="${base}#communs">Communs</a>
+        <div class="dropdown">
+          <span class="drop-label">Les communs</span>
+          <hr class="drop-sep">
+          <a href="${base}#communs">Vue d'ensemble</a>
+          <a href="modele-economique.html">Modèle économique</a>
+          <a href="modele-decisionnel.html">Modèle décisionnel</a>
+        </div>
+      </li>
       <li class="nav-item">
         <a href="${base}#rejoindre">Rejoindre</a>
         <div class="dropdown">
           <span class="drop-label">Vous êtes…</span>
           <hr class="drop-sep">
+          <a href="${base}#rejoindre">Vue d'ensemble</a>
           <a href="rejoindre.html">Comme collaborateur</a>
           <a href="partenaire.html">Comme partenaire</a>
         </div>
@@ -175,7 +186,10 @@
     <div class="nav-mobile" id="navMobile">
       <span class="mob-group-label">Navigation</span>
       <a href="${base}#vision">Vision</a>
-      <a href="${base}#communs">Communs</a>
+      <span class="mob-group-label">Communs</span>
+      <a href="${base}#communs" class="mob-sub">Vue d'ensemble</a>
+      <a href="modele-economique.html" class="mob-sub">Modèle économique</a>
+      <a href="modele-decisionnel.html" class="mob-sub">Modèle décisionnel</a>
       <span class="mob-group-label">Produit</span>
       <a href="produit-individuel.html" class="mob-sub">Santé mentale individuelle</a>
       <a href="produit-collectif.html" class="mob-sub">Santé mentale collective</a>
